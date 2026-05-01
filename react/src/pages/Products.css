@@ -1,0 +1,36 @@
+.products-container {
+  display: flex;
+  padding: 2rem;
+}
+
+.filters-container {
+  width: 250px;
+  padding: 1rem;
+  border-right: 1px solid #E0E0E0;
+}
+
+.filter-category, .filter-price {
+  margin-bottom: 2rem;
+}
+
+.filter-category h3, .filter-price h3 {
+  margin-bottom: 1rem;
+}
+
+.products-list-container {
+  flex: 1;
+  padding: 1rem;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
