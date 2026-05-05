@@ -25,10 +25,28 @@ const Search = () => {
       <h2>Search Products</h2>
       <input
         type="text"
-        placeholder="Search for products..."
+        placeholder="Type to search (e.g. 'iPhone', 'Laptop')..."
         value={searchTerm}
         onChange={handleSearch}
+        className="search-input"
+        autoFocus
       />
+      
+      <div className="search-status">
+        {searchTerm && searchResults.length > 0 && (
+          <p>Showing {searchResults.length} results for "{searchTerm}"</p>
+        )}
+        {searchTerm && searchResults.length === 0 && (
+          <div className="no-results">
+            <p>No products found matching "{searchTerm}"</p>
+            <p className="suggestion">Try a different keyword or check your spelling.</p>
+          </div>
+        )}
+        {!searchTerm && (
+          <p className="search-hint">Start typing to see matching products.</p>
+        )}
+      </div>
+
       <div className="search-results">
         {searchResults.map((product) => (
           <div key={product.id} className="product-card">

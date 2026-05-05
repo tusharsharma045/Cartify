@@ -7,14 +7,16 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
+      {/* Hero Slider showcasing featured offers */}
       <Slider />
 
-      
+      {/* Categories Section - Allows users to filter by product type */}
       <div className="section-container">
         <h2 className="section-title">Shop by Category</h2>
         <div className="categories">
           <div className="category">
             <Link to="/category/smartphones">
+              {/* Note: Ensure these images exist in /public/images/ or assets */}
               <img src="/images/c1.jpg" alt="smartphones" />
               <h3>Smartphones</h3>
             </Link>
@@ -40,10 +42,11 @@ const Home = () => {
         </div>
       </div>
 
-      
+      {/* Latest Products Section - Displays a snapshot of the newest items */}
       <div className="section-container">
         <h2 className="section-title">Latest Products</h2>
         <div className="products latest-products">
+          {/* We slice the first 8 products from our data to keep the homepage clean */}
           {products.slice(0, 8).map((product) => (
             <div key={product.id} className="product-card">
               <Link to={`/products/${product.id}`}>
@@ -56,11 +59,12 @@ const Home = () => {
         </div>
       </div>
 
-      
+      {/* Features Showcase Section - Highlights store benefits */}
       <div className="features-container">
         <h2>Our Features</h2>
         <div className="features">
           <div className="feature">
+            {/* Using FontAwesome classes for icons */}
             <i className="fas fa-shipping-fast"></i>
             <h3>Free Shipping</h3>
             <p>On all orders over $50</p>
